@@ -1,0 +1,49 @@
+// --------------------
+// Animation's button
+// --------------------
+
+@mixin btnStyle() {
+	padding: 1em 2em;
+	border-radius: 8px;
+	background: none;
+	border: 2px solid transparent;
+	text-transform: uppercase;
+	color: $pure-white;
+	cursor: pointer;
+}
+
+@mixin btnLightColor($lightColor) {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+	background-color: $lightColor;
+}
+
+@mixin btnDarkColor($darkColor) {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $darkColor;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform 0.3s;
+	z-index: -1;
+}
+
+// --------------------
+// Hero Graphic
+// --------------------
+
+@mixin heroImages($bgImg) {
+	background-image: $blue-gradient, url($bgImg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}

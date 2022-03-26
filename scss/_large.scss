@@ -1,0 +1,18 @@
+@media(min-width: 992px){
+    .burger-btn {
+        top: 50px;
+        right: 50px;
+    }
+
+    .header{
+        @include heroImages('../img/darkKnight-1920.jpg');
+
+        &__title{
+            font-size: 10rem;
+        }
+    }
+}
+
+@media(min-width: 1200px){
+
+}

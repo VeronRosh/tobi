@@ -1,0 +1,9 @@
+.btn-special-animation {
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+
+	&:hover::after {
+		transform: scaleY(1);
+	}
+}
