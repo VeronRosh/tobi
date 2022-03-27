@@ -80,8 +80,6 @@ body {
 	}
 }
 
-
-
 // ------------------
 // NAV
 // ------------------
@@ -143,9 +141,6 @@ body {
 		background-color: $main-color;
 		opacity: 0;
 
-		&--active{
-			animation: titleLeft 2s .2s forwards;
-		}
 		span {
 			font-weight: 600;
 			padding: 0.2em 0;
@@ -161,10 +156,56 @@ body {
 			border: 22px solid;
 			border-color: $main-color #0000 #0000 #0000;
 		}
+
+		&--active {
+			animation: titleLeft 2s 0.2s forwards;
+		}
+	}
+
+	&__cards{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 3em;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 1em;
+		width: 250px;
+		height: 200px;
+		border-radius: 35px;
+		background-color: rgb(21, 39, 58);
+		text-transform: uppercase;
+
+		&-title {
+			margin: 0.5em 0em;
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		&-btn {
+			@include btnStyle;
+			position: absolute;
+			bottom: 20px;
+			padding: 0.8em 1.5em;
+			border-radius: 15px;
+			background-color: rgb(24, 94, 168);
+
+			&::before{
+				background-color: rgb(14, 72, 134);
+			}
+		}
+
+		&-info {
+			display: none;
+		}
 	}
 }
-
-
 
 @import './small';
 @import './medium';
