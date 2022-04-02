@@ -1,7 +1,7 @@
 .burger-btn {
   position: fixed;
-  top: 3em;
-  right: 3em;
+  top: 2em;
+  right: 2em;
   background: none;
   border: 1px solid transparent;
   padding: 1em;
@@ -433,7 +433,7 @@ body {
   text-decoration: none;
   margin: 0.5em;
   padding: 0.5em;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #fff;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
