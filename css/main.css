@@ -1,55 +1,142 @@
-.burger-btn {
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
   position: fixed;
-  top: 2em;
-  right: 2em;
-  background: none;
-  border: 1px solid transparent;
-  padding: 1em;
+  right: 30px;
+  top: 30px;
+  padding: 15px 15px;
+  display: inline-block;
   cursor: pointer;
-  z-index: 1100;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  z-index: 1000;
 }
 
-.burger-btn:focus {
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.726);
-  border-radius: 8px;
+.hamburger:hover {
+  opacity: 0.7;
 }
 
-.burger-btn:hover .burger-btn__bars::after,
-.burger-btn:hover .burger-btn__bars::before {
-  width: 100%;
+.hamburger.is-active:hover {
+  opacity: 0.7;
 }
 
-.burger-btn__box {
-  position: relative;
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-box {
   width: 40px;
-  height: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
 }
 
-.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
-  content: '';
-  position: absolute;
-  right: 0;
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
   height: 3px;
   background-color: #fff;
-  -webkit-transition: width 0.3s ease-out;
-  transition: width 0.3s ease-out;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
 }
 
-.burger-btn__bars {
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+  width: 80%;
+  right: 0;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+  width: 50%;
+  right: 0;
+}
+
+.hamburger--spin .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+          transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  -webkit-transition-delay: 0.12s;
+          transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
   width: 100%;
-}
-
-.burger-btn__bars::after {
-  top: 13px;
-  width: 60%;
-}
-
-.burger-btn__bars::before {
-  top: 27px;
-  width: 30%;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .btn-special-animation {
@@ -253,8 +340,9 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
-  background-color: #c9c9c9;
+  background-color: #091c2b;
   color: #fff;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -272,7 +360,7 @@ body {
   background-color: rgba(0, 0, 0, 0);
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 1010;
   -webkit-transition: opacity 0.3s, background-color 0.3s;
   transition: opacity 0.3s, background-color 0.3s;
 }
@@ -344,6 +432,7 @@ body {
   bottom: 0;
   padding: 1em 1.5em;
   font-size: 1.4rem;
+  white-space: normal;
   background-color: rgba(8, 8, 8, 0.719);
 }
 
@@ -388,7 +477,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 .header__title {
@@ -434,7 +523,7 @@ body {
   margin: 0.5em;
   padding: 0.5em;
   font-size: 2rem;
-  color: #fff;
+  color: #d2dce4;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -471,7 +560,7 @@ body {
 }
 
 .nav__item--mobile:hover {
-  color: rgba(21, 71, 114, 0.993);
+  color: #1f6ab1;
 }
 
 .nav-desktop {
@@ -480,12 +569,12 @@ body {
   top: 0;
   width: 100%;
   z-index: 10;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .nav-desktop--active {
-  background-color: rgba(10, 25, 44, 0.918);
+  background-color: rgba(11, 19, 31, 0.829);
 }
 
 .nav-mobile {
@@ -526,40 +615,44 @@ body {
   overflow: hidden;
 }
 
-.offer__title {
+.section-title {
   display: inline-block;
   position: relative;
   padding: 1em 1.5em;
-  margin-left: 1em;
-  margin-top: 4em;
-  font-size: 2.2rem;
-  font-weight: 300;
+  margin: 0em 1em;
   text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
   border-radius: 30px;
   background-color: #245685;
-  opacity: 0;
 }
 
-.offer__title span {
+.section-title span {
   font-weight: 600;
   padding: 0.2em 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #d2dce4;
 }
 
-.offer__title::before {
+.section-title::before {
   content: '';
   position: absolute;
   top: 100%;
-  left: 70%;
+  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border: 22px solid;
   border-color: #245685 #0000 #0000 #0000;
 }
 
-.offer__title--active {
-  -webkit-animation: titleLeft 2s 0.2s forwards;
-          animation: titleLeft 2s 0.2s forwards;
+.offer__title {
+  height: 70px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 
 .offer__cards {
@@ -676,7 +769,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 10px;
-  border: 2px solid #0d6699;
+  border: 2px solid rgba(10, 123, 189, 0.733);
   color: #2090d1;
   font-weight: 700;
   background: none;
@@ -689,23 +782,203 @@ body {
 }
 
 .offer__card--confirm:hover {
-  color: #fff;
+  color: #d2dce4;
+}
+
+.shopping__title {
+  height: 70px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+
+.shopping__title--active {
+  -webkit-animation: titleLeft 2s 0.2s forwards;
+          animation: titleLeft 2s 0.2s forwards;
+}
+
+.shopping__cards {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 1em 2em;
+  margin-top: -3em;
+}
+
+.shopping__card {
+  position: relative;
+  left: 0;
+  border-radius: 15px;
+  background-color: #15273a;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  margin-top: 5em;
+  padding: 1em 2em;
+  overflow: hidden;
+}
+
+.shopping__card--shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(5, 13, 29, 0.808);
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+.shopping__card-box {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+}
+
+.shopping__card--icon {
+  position: absolute;
+  left: 85%;
+}
+
+.shopping__card-info, .shopping__card-degree {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(14, 26, 41, 0.664);
+}
+
+.shopping__card-info img, .shopping__card-degree img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.shopping__card-degree {
+  right: 0;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.shopping__card-info {
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.shopping__card:nth-child(1) {
+  background-image: url("/img/card1.jpg");
+}
+
+.shopping__card:nth-child(2) {
+  background-image: url("/img/card2.jpg");
+}
+
+.shopping__card:nth-child(3) {
+  background-image: url("/img/card3.jpg");
+}
+
+.shopping__card-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.shopping__card-title {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #d2dce4;
+  font-size: 2rem;
+  text-transform: uppercase;
+  z-index: 1;
+  -webkit-transition: letter-spacing .5s;
+  transition: letter-spacing .5s;
+}
+
+.shopping__card-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  padding: 1em 2em;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #d2dce4;
+  border-radius: 5px;
+  background: none;
+  letter-spacing: 1px;
+  color: #d2dce4;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.shopping__card-btn:hover ~ .shopping__card--shadow {
+  background-color: rgba(5, 13, 29, 0.562);
+}
+
+.shopping__card-btn:hover ~ .shopping__card-title {
+  letter-spacing: 2px;
+}
+
+.conteiner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  max-width: 1200px;
 }
 
 @media (min-width: 576px) {
+  .section-title {
+    font-size: 2rem;
+  }
   .offer__cards {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
   }
   .offer__card:nth-child(9) {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1/3;
   }
+  .shopping__card-title {
+    font-size: 2.2rem;
+  }
 }
 
 @media (min-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
   .header__title {
     font-size: 6.8rem;
   }
@@ -715,20 +988,66 @@ body {
   .offer__cards {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
   }
   .offer__card:nth-child(9) {
-    -ms-grid-column: 1;
+    -ms-grid-column: 3;
     -ms-grid-column-span: 1;
-    grid-column: 1/2;
-    -ms-grid-row: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
-    grid-row: 1/2;
+    grid-row: 3/4;
+  }
+  .shopping__title {
+    margin-right: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+  }
+  .shopping__title::before {
+    right: 50%;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  .shopping__card-title {
+    font-size: 2.4rem;
+  }
+  .shopping__card-box {
+    height: 70px;
+    top: 10%;
+  }
+  .shopping__card-degree {
+    top: 0;
+    right: 0;
+    margin-top: .5em;
+    margin-right: 1em;
+  }
+  .shopping__card-info {
+    top: 0;
+    left: 0;
+    margin-top: .5em;
+    margin-left: 1em;
+  }
+  .offer__title {
+    margin-left: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  .offer__title::before {
+    right: 50%;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
   }
 }
 
 @media (min-width: 992px) {
-  .burger-btn {
+  .hamburger {
     display: none;
   }
   .nav-mobile {
@@ -745,8 +1064,8 @@ body {
   .nav__item {
     position: relative;
     right: 2.5em;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
   }
   .header {
     background-image: linear-gradient(49deg, #134986 0%, rgba(8, 5, 2, 0.504639) 100%, black 100%), url("../img/darkKnight-1920.jpg");
@@ -756,6 +1075,34 @@ body {
   }
   .header__title {
     font-size: 10rem;
+  }
+  .shopping__title {
+    margin-right: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+  .shopping__title::before {
+    right: 50%;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  .offer__title {
+    margin-left: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .offer__title::before {
+    right: 50%;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 /*# sourceMappingURL=main.css.map */

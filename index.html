@@ -1,145 +1,232 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/">
-<link rel="stylesheet" href="./css/main.css">
-    <title>Tobi</title>
-</head>
-<body>
-    
-    <nav class="nav nav-mobile">
-        <a href="#license" class="nav__item nav__item--mobile">licencja</a>
-        <a href="#community" class="nav__item nav__item--mobile">społeczność</a>
-        <a href="#contact" class="nav__item nav__item--mobile">kontakt</a>
-        <a href="#about-us" class="nav__item nav__item--mobile">o nas</a>
-    </nav>
-    
-    <nav class="nav nav-desktop">
-        <a href="#license" class="nav__item">licencja</a>
-        <a href="#community" class="nav__item">społeczność</a>
-        <a href="#contact" class="nav__item">kontakt</a>
-        <a href="#about-us" class="nav__item">o nas</a>
-    </nav>
-    
-    <button class="burger-btn">
-        <div class="burger-btn__box">
-            <div class="burger-btn__bars"></div>
-        </div>
-    </button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<title>Tobi</title>
+	</head>
+	<body>
+		<nav class="nav nav-mobile">
+			<a href="#home" class="nav__item nav__item--mobile">home</a>
+			<a href="#offer" class="nav__item nav__item--mobile">oferty</a>
+			<a href="#license" class="nav__item nav__item--mobile">licencja</a>
+			<a href="#community" class="nav__item nav__item--mobile">społeczność</a>
+			<a href="#contact" class="nav__item nav__item--mobile">kontakt</a>
+		</nav>
 
-    
-<header class="header">
-<h1 class="header__title">tobi</h1>
-<p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, temporibus!</p>
-<a href="#offer" class="header__btn">
-    <img src="./img/icons/arrow-down.svg" alt="">
-</a>
-</header>
+		<nav class="nav nav-desktop">
+			<a href="#home" class="nav__item">home</a>
+			<a href="#offer" class="nav__item">oferty</a>
+			<a href="#license" class="nav__item">licencja</a>
+			<a href="#community" class="nav__item">społeczność</a>
+			<a href="#contact" class="nav__item">kontakt</a>
+		</nav>
 
-<main class="main">
-    <section id="offer" class="offer">
-        <div class="wrapper">
-            <h2 class="offer__title">Co 
-                <span>oferujemy?</span> 
-            </h2>
-            
-            <div class="offer__cards">
-                
+		<button class="hamburger hamburger--spin" type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</button>
 
-                <!-- card first -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">exp</h2>
-                    <button class="offer__card-btn btn-special-animation" id="exp">czytaj</button>
-                </div>
+		<header class="header" id="home">
+			<h1 class="header__title">tobi</h1>
+			<p class="header__text">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
+				temporibus!
+			</p>
+			<a href="#offer" class="header__btn">
+				<img src="./img/icons/arrow-down.svg" alt="" />
+			</a>
+		</header>
 
-               <!-- card second -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">e2</h2>
-                    <button class="offer__card-btn btn-special-animation" id="e2">czytaj</button>
-                </div>
+		<main class="main">
+			<section id="offer" class="offer">
+				<div class="wrapper">
+					<div class="conteiner">
+						<h2 class="offer__title section-title">
+							Co
+							<span>oferujemy?</span>
+						</h2>
+					</div>
 
-                <!-- card third -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">herosi</h2>
-                    <button class="offer__card-btn btn-special-animation" id="hero">czytaj</button>
-                </div> 
+					<div class="offer__cards">
+						<!-- card first -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">exp</h2>
+							<button class="offer__card-btn btn-special-animation" id="exp">
+								czytaj
+							</button>
+						</div>
 
-                <!-- card fourth -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">questy</h2>
-                    <button class="offer__card-btn btn-special-animation" id="task">czytaj</button>
-                </div> 
+						<!-- card second -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">e2</h2>
+							<button class="offer__card-btn btn-special-animation" id="e2">
+								czytaj
+							</button>
+						</div>
 
-                <!-- card fifth -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">tunia</h2>
-                    <button class="offer__card-btn btn-special-animation" id="tunia">czytaj</button>
-                </div> 
+						<!-- card third -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">herosi</h2>
+							<button class="offer__card-btn btn-special-animation" id="hero">
+								czytaj
+							</button>
+						</div>
 
-                <!-- card sixth -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">depozyt</h2>
-                    <button class="offer__card-btn btn-special-animation" id="deposit">czytaj</button>
-                </div> 
+						<!-- card fourth -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">questy</h2>
+							<button class="offer__card-btn btn-special-animation" id="task">
+								czytaj
+							</button>
+						</div>
 
-                <!-- card seventh -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">dodatki</h2>
-                    <button class="offer__card-btn btn-special-animation" id="additives">czytaj</button>
-                </div> 
+						<!-- card fifth -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">tunia</h2>
+							<button class="offer__card-btn btn-special-animation" id="tunia">
+								czytaj
+							</button>
+						</div>
 
-                 <!-- card eighth -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">antycaptcha</h2>
-                    <button class="offer__card-btn btn-special-animation" id="antycaptcha">czytaj</button>
-                </div> 
+						<!-- card sixth -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">depozyt</h2>
+							<button
+								class="offer__card-btn btn-special-animation"
+								id="deposit"
+							>
+								czytaj
+							</button>
+						</div>
 
-                <!-- card nineth -->
-                <div class="offer__card">
-                    <h2 class="offer__card-title">ni&si</h2>
-                    <button class="offer__card-btn btn-special-animation" id="modern">czytaj</button>
-                </div> 
+						<!-- card seventh -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">dodatki</h2>
+							<button
+								class="offer__card-btn btn-special-animation"
+								id="additives"
+							>
+								czytaj
+							</button>
+						</div>
 
-                                <!-- info -->
-                <div class="offer__card-info">
-                    <img src="" alt="" class="offer__card-img">
-                    <div class="offer__card-box">
-                        <p class="offer__card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, nulla?</p>
-                    </div>
-                    <button class="offer__card--confirm btn-special-animation">ok</button>
-                </div>     
+						<!-- card eighth -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">antycaptcha</h2>
+							<button
+								class="offer__card-btn btn-special-animation"
+								id="antycaptcha"
+							>
+								czytaj
+							</button>
+						</div>
 
+						<!-- card nineth -->
+						<div class="offer__card">
+							<h2 class="offer__card-title">ni&si</h2>
+							<button class="offer__card-btn btn-special-animation" id="modern">
+								czytaj
+							</button>
+						</div>
 
-            </div>
-        </div>
-    </section>
-</main>
+						<!-- main modal -->
+						<div class="modal-bg">
+							<div class="modal">
+								<button class="modal__cross">
+									<span>x</span>
+								</button>
+								<img src="" alt="" class="modal__img" />
+								<div class="modal__shadow"></div>
+								<p class="modal__text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Odio, nam?
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-<!-- main modal -->
-<div class="modal-bg">
-    <div class="modal">
-        <button class="modal__cross">
-            <span>x</span>
-        </button>
-       <img src="" alt="" class="modal__img">
-       <div class="modal__shadow"></div>
-        <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, nam?</p>
-    </div>
-</div>
+			<section id="license" class="shopping">
+				<div class="wrapper">
+					<div class="conteiner">
+						<h2 class="shopping__title section-title">
+							Nasze
+							<span>pakiety</span>
+						</h2>
+					</div>
 
-<footer class="footer">
-    <p class="footer__bottom-text"> &copy; <span class="footer__year"> Tobi</span> </p>
-</footer>
+					<!-- DO PRZERBÓWKI -->
+					<div class="shopping__cards">
+						<div class="shopping__card">
+							<button class="shopping__card-btn">wybierz</button>
+							
+							<div class="shopping__card--shadow"></div>
+							<h2 class="shopping__card-title">maksymalista</h2>
+							<div class="shopping__card-box">
+								<div class="shopping__card-degree">
+									<img src="/img/icons/shield.svg" alt="" />
+								</div>
+								<div class="shopping__card-info">
+									<img src="/img/icons/info.svg" alt="" />
+								</div>
+							</div>
+						</div>
 
+						<div class="shopping__card">
+							<button class="shopping__card-btn">wybierz</button>
 
+							<h2 class="shopping__card-title">minimalista</h2>
+							<div class="shopping__card--shadow"></div>
+							<div class="shopping__card-box">
+								<div class="shopping__card-degree">
+									<img src="/img/icons/arrow-top-tail.svg" alt="" />
+								</div>
 
+								<div class="shopping__card-info">
+									<img src="/img/icons/info.svg" alt="" />
+								</div>
+							</div>
 
-    <script src="./js/main.js"></script>
-</body>
+						</div>
+
+						<div class="shopping__card">
+							<button class="shopping__card-btn">wybierz</button>
+							
+							<h2 class="shopping__card-title">śmiałek</h2>
+							<div class="shopping__card--shadow"></div>
+							<div class="shopping__card-box">
+								<div class="shopping__card-degree">
+									<img src="/img/icons/book-open.svg" alt="" />
+								</div>
+								<div class="shopping__card-info">
+									<img src="/img/icons/info.svg" alt="" />
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p class="footer__bottom-text">
+				&copy; <span class="footer__year"> Tobi</span>
+			</p>
+		</footer>
+
+		<script src="./js/main.js"></script>
+	</body>
 </html>

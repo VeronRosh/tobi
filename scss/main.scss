@@ -20,8 +20,9 @@ html {
 body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
-	background-color: rgb(201, 201, 201);
+	background-color: rgb(9, 28, 43);
 	color: $pure-white;
+	overflow-x: hidden;
 }
 
 .wrapper {
@@ -39,7 +40,7 @@ body {
 	background-color: rgba(0, 0, 0, 0);
 	opacity: 0;
 	visibility: hidden;
-	z-index: 1000;
+	z-index: 1010;
 	transition: opacity 0.3s, background-color 0.3s;
 	&--active {
 		visibility: visible;
@@ -98,6 +99,7 @@ body {
 		bottom: 0;
 		padding: 1em 1.5em;
 		font-size: 1.4rem;
+		white-space: normal;
 		background-color: rgba(8, 8, 8, 0.719);
 	}
 
@@ -135,7 +137,7 @@ body {
 	height: 100vh;
 	text-align: center;
 	@include heroImages('../img/darkKnight-640.jpg');
-	background-attachment: scroll;
+	background-attachment: fixed;
 
 	&__title {
 		position: relative;
@@ -182,7 +184,7 @@ body {
 		margin: 0.5em;
 		padding: 0.5em;
 		font-size: 2rem;
-		color: #fff;
+		color: rgb(210, 220, 228);
 		transition: color 0.3s;
 
 		//animation on desktop
@@ -217,7 +219,7 @@ body {
 				display: none;
 			}
 			&:hover {
-				color: $dark-blue;
+				color: $light-blue;
 			}
 		}
 	}
@@ -228,10 +230,10 @@ body {
 		top: 0;
 		width: 100%;
 		z-index: 10;
-		transition: background-color .3s;
+		transition: background-color 0.3s;
 
-		&--active{
-			background-color: rgba(10, 25, 44, 0.918);
+		&--active {
+			background-color: rgba(11, 19, 31, 0.829);
 		}
 	}
 
@@ -263,39 +265,49 @@ body {
 // ----------------
 // Section Offer
 // ----------------
+
+
+
+//style title's section
+.section-title {
+	display: inline-block;
+	position: relative;
+	padding: 1em 1.5em;
+	margin: 0em 1em;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	font-weight: 300;
+	text-align: center;
+	border-radius: 30px;
+	background-color: $sea-blue;
+
+	span {
+		font-weight: 600;
+		padding: 0.2em 0;
+		border-bottom: 1px solid rgb(210, 220, 228);;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		border: 22px solid;
+		border-color: $sea-blue #0000 #0000 #0000;
+	}
+}
+
 .offer {
 	&__title {
-		display: inline-block;
-		position: relative;
-		padding: 1em 1.5em;
-		margin-left: 1em;
-		margin-top: 4em;
-		font-size: 2.2rem;
-		font-weight: 300;
-		text-transform: uppercase;
-		border-radius: 30px;
-		background-color: $sea-blue;
-		opacity: 0;
-
-		span {
-			font-weight: 600;
-			padding: 0.2em 0;
-			border-bottom: 1px solid #fff;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 70%;
-			transform: translateX(-50%);
-			border: 22px solid;
-			border-color: $sea-blue #0000 #0000 #0000;
-		}
-
-		&--active {
-			animation: titleLeft 2s 0.2s forwards;
-		}
+		height: 70px;
+		grid-row: 2/3;
+		grid-column: 1/4;
+		// opacity: 0;
+		
+		// &--active {
+		// 	animation: titleLeft 2s 0.2s forwards;
+		// }
 	}
 
 	&__cards {
@@ -380,7 +392,8 @@ body {
 			bottom: 5px;
 			transform: translate(-50%, -50%);
 			border-radius: 10px;
-			border: 2px solid rgb(13, 102, 153);
+			// border: 2px solid rgb(13, 102, 153);
+			border: 2px solid rgba(10, 123, 189, 0.733);
 			color: rgb(32, 144, 209);
 			font-weight: 700;
 			background: none;
@@ -391,10 +404,175 @@ body {
 			}
 
 			&:hover {
-				color: #fff;
+				color: rgb(210, 220, 228);
 			}
 		}
 	}
+}
+
+// ----------------
+// Section Shopping
+// ----------------
+
+.shopping {
+	&__title {
+		height: 70px;
+		grid-row: 2/3;
+		grid-column: 1/4;
+		// opacity: 0;
+
+		&--active {
+			animation: titleLeft 2s 0.2s forwards;
+		}
+	}
+
+	&__cards {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		// gap: 1em 2em;
+		width: 100%;
+		height: 100%;
+		padding: 1em 2em;
+		margin-top: -3em;
+	}
+
+	&__card {
+		position: relative;
+		left: 0;
+		border-radius: 15px;
+		background-color: rgb(21, 39, 58);
+		background-position: center;
+		background-size: cover;
+		height: 300px;
+		margin-top: 5em;
+		padding: 1em 2em;
+		overflow: hidden;
+		
+		
+		&--shadow{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: rgba(5, 13, 29, 0.808);
+			transition: background-color .5s;
+		}
+		
+		&-box{
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 150px;
+			height: 150px;
+			z-index: 1;
+		}
+
+		&--icon{
+			position: absolute;
+			left: 85%;
+		}
+
+		&-info, &-degree{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: rgba(14, 26, 41, 0.664);
+			img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		
+		&-degree{
+			right: 0;
+			margin-top: 1em;
+			margin-right: 1em;
+		}
+
+		&-info{
+			bottom: 0;
+			right: 0;
+			margin-bottom: 1em;
+			margin-right: 1em;
+			cursor: pointer;
+		}
+
+		&:nth-child(1){
+			background-image: url('/img/card1.jpg');
+		}
+		&:nth-child(2){
+			background-image: url('/img/card2.jpg');
+		}
+		&:nth-child(3){
+			background-image: url('/img/card3.jpg');
+		}
+		
+		&-img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+		}
+
+		&-title {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			color: rgb(210, 220, 228);
+			font-size: 2rem;
+			text-transform: uppercase;
+			z-index: 1;
+			transition: letter-spacing .5s;
+		}
+
+		&-btn {
+			position: absolute;
+			left: 50%;
+			bottom: 5%;
+			padding: 1em 2em;
+			font-weight: 600;
+			font-family: 'Montserrat', sans-serif;
+			text-transform: uppercase;
+			border: 2px solid rgb(210, 220, 228);
+			border-radius: 5px;
+			background: none;
+			letter-spacing: 1px;
+			color: rgb(210, 220, 228);
+			transform: translate(-50%);
+			transition: border-color 0.3s, color 0.3s;
+			cursor: pointer;
+			z-index: 1;
+
+			// &:hover {
+			// 	border-color: $light-blue;
+			// 	color:  $light-blue;
+			// }
+
+			&:hover ~ .shopping__card--shadow{
+				background-color: rgba(5, 13, 29, 0.562);
+			}
+
+			&:hover ~ .shopping__card-title{
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+.conteiner {
+	display: grid;
+	grid-template-rows: repeat(3,1fr);
+	grid-template-columns: repeat(3,1fr);
+	max-width: 1200px;
+	// overflow: hidden;
 }
 
 @import './small';

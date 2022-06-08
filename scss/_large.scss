@@ -1,5 +1,5 @@
 @media(min-width: 992px){
-    .burger-btn {
+    .hamburger{
         display: none;
     }
 
@@ -15,8 +15,8 @@
     .nav__item{
         position: relative;
         right: 2.5em;
-        font-size: 1.8rem;
-        letter-spacing: 1px;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
     }
 
     .header{
@@ -26,6 +26,30 @@
             font-size: 10rem;
         }
     }
+
+    .shopping {
+		&__title {
+			margin-right: 1em;
+			grid-row: 2/3;
+			grid-column: 3/4;
+            &::before {
+                right: 50%;
+                transform: translateX(-50px);
+            }
+		}
+	}
+
+	.offer{
+		&__title {
+			margin-left: 1em;
+			grid-row: 2/3;
+			grid-column: 1/2;
+            &::before {
+                right: 50%;
+                transform: translateX(50px);
+            }
+		}
+	}
 }
 
 @media(min-width: 1200px){
