@@ -505,13 +505,13 @@ body {
 		}
 
 		&:nth-child(1){
-			background-image: url('/img/card1.jpg');
+			background-image: url('./img/card1.jpg');
 		}
 		&:nth-child(2){
-			background-image: url('/img/card2.jpg');
+			background-image: url('./img/card2.jpg');
 		}
 		&:nth-child(3){
-			background-image: url('/img/card3.jpg');
+			background-image: url('./img/card3.jpg');
 		}
 		
 		&-img {
