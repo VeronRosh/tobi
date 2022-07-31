@@ -1,57 +1,82 @@
-@media(min-width: 992px){
-    .hamburger{
-        display: none;
-    }
+@media (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
 
-    .nav-mobile{
-        display: none;
-    }
-    
-    .nav-desktop{
-        display: flex;
-        justify-content: right;
-    }
+	.nav-mobile {
+		display: none;
+	}
 
-    .nav__item{
-        position: relative;
-        right: 2.5em;
-        font-size: 1.6rem;
-        letter-spacing: 2px;
-    }
+	.nav-desktop {
+		display: flex;
+		justify-content: right;
+	}
 
-    .header{
-        @include heroImages('../img/darkKnight-1920.jpg');
+	.nav__item {
+		position: relative;
+		right: 2.5em;
+		font-size: 1.6rem;
+		letter-spacing: 2px;
+	}
 
-        &__title{
-            font-size: 10rem;
-        }
-    }
+	.header {
+		@include heroImages('../img/darkKnight-1920.jpg');
 
-    .shopping {
+		&__title {
+			font-size: 10rem;
+		}
+	}
+
+	.shopping {
 		&__title {
 			margin-right: 1em;
 			grid-row: 2/3;
 			grid-column: 3/4;
-            &::before {
-                right: 50%;
-                transform: translateX(-50px);
-            }
+			&::before {
+				right: 50%;
+				transform: translateX(-50px);
+			}
+		}
+
+		&__card {
+			&-back {
+				&__textBox {
+					p:nth-child(2) {
+						font-size: 1.8rem;
+					}
+				}
+			}
 		}
 	}
 
-	.offer{
+	.offer {
 		&__title {
 			margin-left: 1em;
 			grid-row: 2/3;
 			grid-column: 1/2;
-            &::before {
-                right: 50%;
-                transform: translateX(50px);
-            }
+			&::before {
+				right: 50%;
+				transform: translateX(50px);
+			}
 		}
+	}
+
+	.community {
+		&__title {
+			grid-column: 1/2;
+			grid-row: 2/3;
+			
+            &::before {
+				right: 50%;
+				transform: translateX(50px);
+			}
+		}
+
+		// &__box {
+		// 	@include heroImages('https://pixabay.com/pl/users/torulus-7457760/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3144759');
+		// }
 	}
 }
 
-@media(min-width: 1200px){
-
+@media (min-width: 1200px) {
 }

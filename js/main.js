@@ -1,3 +1,7 @@
+particlesJS.load('currentCard', 'js/assets/particles.json');
+particlesJS.load('previousCard', 'js/assets/particles.json');
+particlesJS.load('nextCard', 'js/assets/particles.json');
+
 const body = document.querySelector('body');
 
 //modal boxes
@@ -15,17 +19,53 @@ const navDesktop = document.querySelector('.nav-desktop');
 const navItemsMobile = document.querySelectorAll('.nav__item--mobile');
 
 // //section shopping
-// const btnsChoice = document.querySelectorAll('.shopping__card-btn');
-// const shadowCards = document.querySelectorAll('.shopping__card--shadow');
+const choiceBtns = document.querySelectorAll('.shopping__card-btn');
+const shoppingBtnsCross = document.querySelectorAll('.shopping__card-cross');
+const cardsShoppingBack = document.querySelectorAll('.shopping__card-back');
 
-// const brighteningCard = () => {
-//     shadowCards[0].classList.toggle('shopping__card--brightening');
-//     console.log('hej');
-// };
+choiceBtns.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		if (btn.classList.contains('current--btn')) {
+			console.log('maksymalista');
+			cardsShoppingBack[0].classList.add('shopping__card-back--active');
+			cardsShoppingBack[0].classList.remove('shopping__card-back--noactive');
+		} else if (btn.classList.contains('next--btn')) {
+			console.log('minimalista');
+			cardsShoppingBack[1].classList.add('shopping__card-back--active');
+			cardsShoppingBack[1].classList.remove('shopping__card-back--noactive');
+		} else if (btn.classList.contains('previous--btn')) {
+			console.log('śmiałek');
+			cardsShoppingBack[2].classList.add('shopping__card-back--active');
+			cardsShoppingBack[2].classList.remove('shopping__card-back--noactive');
+		}
+	});
+});
 
-// btnsChoice.forEach((btn) => {
-//     btn.addEventListener('mouseenter', brighteningCard);
-// });
+shoppingBtnsCross.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		cardsShoppingBack.forEach((card) => {
+			if (
+				card.classList.contains('back--first') &&
+				btn.classList.contains('current--btn')
+			) {
+				card.classList.remove('shopping__card-back--active');
+				card.classList.add('shopping__card-back--noactive');
+			} else if (
+				card.classList.contains('back--second') &&
+				btn.classList.contains('next--btn')
+			) {
+				card.classList.remove('shopping__card-back--active');
+				card.classList.add('shopping__card-back--noactive');
+			} else if (
+				card.classList.contains('back--third') &&
+				btn.classList.contains('previous--btn')
+			) {
+				card.classList.remove('shopping__card-back--active');
+				card.classList.add('shopping__card-back--noactive');
+			}
+		});
+	});
+});
 
 //show and close navigation mobile
 const handleNav = () => {
@@ -116,14 +156,14 @@ window.addEventListener('scroll', () => {
 });
 
 //animation's offer tittle
-window.addEventListener('scroll', () => {
-	let content = document.querySelector('.offer__title');
-	let contentPosition = content.getBoundingClientRect().top;
-	let screenPosition = window.innerHeight;
-	if (contentPosition < screenPosition) {
-		content.classList.add('offer__title--active');
-	}
-});
+// window.addEventListener('scroll', () => {
+// 	let content = document.querySelector('.offer__title');
+// 	let contentPosition = content.getBoundingClientRect().top;
+// 	let screenPosition = window.innerHeight;
+// 	if (contentPosition < screenPosition) {
+// 		content.classList.add('offer__title--active');
+// 	}
+// });
 
 modalCross.addEventListener('click', modalClose);
 modalBg.addEventListener('click', modalClose);

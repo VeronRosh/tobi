@@ -149,8 +149,6 @@
 								<img src="" alt="" class="modal__img" />
 								<div class="modal__shadow"></div>
 								<p class="modal__text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Odio, nam?
 								</p>
 							</div>
 						</div>
@@ -169,8 +167,8 @@
 
 					<!-- DO PRZERBÓWKI -->
 					<div class="shopping__cards">
-						<div class="shopping__card">
-							<button class="shopping__card-btn">wybierz</button>
+						<div class="shopping__card" id="currentCard">
+							<button class="shopping__card-btn current--btn">pokaż</button>
 							
 							<div class="shopping__card--shadow"></div>
 							<h2 class="shopping__card-title">maksymalista</h2>
@@ -178,14 +176,35 @@
 								<div class="shopping__card-degree">
 									<img src="./img/icons/shield.svg" alt="" />
 								</div>
-								<div class="shopping__card-info">
-									<img src="./img/icons/info.svg" alt="" />
+							</div>
+
+							<div class="shopping__card-back back--first">
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<button class="shopping__card-cross current--btn">
+									<span>x</span>
+								</button>
+								<div class="shopping__card-back-box shopping__card-back-box--first">
+									<h2>anty<span>Captcha</span>
+									</h2>
+									<p>1350 użyć</p>
+								</div>
+								<div class="shopping__card-back-box shopping__card-back-box--second">
+									<h2>Bot</h2>
+									<p>30 dni</p>
+								</div>
+
+								<div class="shopping__card-back__textBox">
+									<p class="shopping__card-back__info">Pakiet obejmuje AntyCaptche oraz Bota</p>
+									<p class="shopping__card-back__cost">Cena - 15PLN</p>
 								</div>
 							</div>
+
 						</div>
 
-						<div class="shopping__card">
-							<button class="shopping__card-btn">wybierz</button>
+						<div class="shopping__card" id="nextCard">
+							<button class="shopping__card-btn next--btn">pokaż</button>
 
 							<h2 class="shopping__card-title">minimalista</h2>
 							<div class="shopping__card--shadow"></div>
@@ -193,16 +212,35 @@
 								<div class="shopping__card-degree">
 									<img src="./img/icons/arrow-top-tail.svg" alt="" />
 								</div>
+							</div>
 
-								<div class="shopping__card-info">
-									<img src="./img/icons/info.svg" alt="" />
+							<div class="shopping__card-back back--second">
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<button class="shopping__card-cross next--btn">
+									<span>x</span>
+								</button>
+								<div class="shopping__card-back-box shopping__card-back-box--first">
+									<h2>anty<span>Captcha</span>
+									</h2>
+									<p>1000 użyć</p>
+								</div>
+								<div class="shopping__card-back-box shopping__card-back-box--second">
+									<h2>Bot</h2>
+									<p>15 dni</p>
+								</div>
+								<div class="shopping__card-back__textBox">
+									<p class="shopping__card-back__info">Pakiet obejmuje AntyCaptche oraz Bota</p>
+									<p class="shopping__card-back__cost">Cena - 10PLN</p>
 								</div>
 							</div>
 
+
 						</div>
 
-						<div class="shopping__card">
-							<button class="shopping__card-btn">wybierz</button>
+						<div class="shopping__card" id="previousCard">
+							<button class="shopping__card-btn previous--btn">pokaż</button>
 							
 							<h2 class="shopping__card-title">śmiałek</h2>
 							<div class="shopping__card--shadow"></div>
@@ -210,14 +248,45 @@
 								<div class="shopping__card-degree">
 									<img src="./img/icons/book-open.svg" alt="" />
 								</div>
-								<div class="shopping__card-info">
-									<img src="./img/icons/info.svg" alt="" />
+							</div>
+
+							<div class="shopping__card-back back--third">
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<p class="shopping__card-letter">T</p>
+								<button class="shopping__card-cross previous--btn">
+									<span>x</span>
+								</button>
+								<div class="shopping__card-back-box shopping__card-back-box--first">
+									<h2>anty<span>Captcha</span>
+									</h2>
+									<p>1350 użyć</p>
+								</div>
+								<div class="shopping__card-back-box shopping__card-back-box--second">
+									<h2>Bot</h2>
+									<p>30 dni</p>
+								</div>
+								<div class="shopping__card-back__textBox">
+									<p class="shopping__card-back__info">Pakiet <span>obejmuje tylko</span> AntyCaptche lub Bota</p>
+									<p class="shopping__card-back__cost">Cena - 6PLN</p>
 								</div>
 							</div>
 
 						</div>
 					</div>
 				</div>
+			</section>
+
+			<section id="community" class="community">
+				<div class="wrapper">
+					<div class="conteiner">
+						<h2 class="community__title section-title">
+							<span>Społeczność</span>
+						</h2>
+					</div>
+				</div>
+
+				<div class="community__box"></div>
 			</section>
 		</main>
 
@@ -227,6 +296,7 @@
 			</p>
 		</footer>
 
+		<script src="./js/particles/particles.min.js"></script>
 		<script src="./js/main.js"></script>
 	</body>
 </html>
