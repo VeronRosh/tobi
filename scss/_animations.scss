@@ -134,3 +134,43 @@
 		transform: rotate(-360deg);
 	}
 }
+
+@keyframes borderSnake1{
+	0%{
+		transform: translateX(-100%);
+	}
+
+	100%{
+		transform: translateX(100%);
+	}
+}
+
+@keyframes borderSnake2{
+	0%{
+		transform: translateY(-100%);
+	}
+
+	100%{
+		transform: translateY(100%);
+	}
+}
+
+@keyframes borderSnake3{
+	0%{
+		transform: translateX(100%);
+	}
+
+	100%{
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes borderSnake4{
+	0%{
+		transform: translateY(100%);
+	}
+
+	100%{
+		transform: translateY(-100%);
+	}
+}

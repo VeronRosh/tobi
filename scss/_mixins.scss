@@ -20,6 +20,13 @@
 	transform: translate(-50%, -50%);
 }
 
+@mixin middleFlexElement(){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 // @mixin btnLightColor($lightColor) {
 // 	content: '';
 // 	position: absolute;

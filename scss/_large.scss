@@ -29,11 +29,8 @@
 
 	.shopping {
 		&__title {
-			margin-right: 1em;
-			grid-row: 2/3;
 			grid-column: 3/4;
 			&::before {
-				right: 50%;
 				transform: translateX(-50px);
 			}
 		}
@@ -51,11 +48,8 @@
 
 	.offer {
 		&__title {
-			margin-left: 1em;
-			grid-row: 2/3;
 			grid-column: 1/2;
 			&::before {
-				right: 50%;
 				transform: translateX(50px);
 			}
 		}
@@ -64,19 +58,32 @@
 	.community {
 		&__title {
 			grid-column: 1/2;
-			grid-row: 2/3;
 			
             &::before {
-				right: 50%;
 				transform: translateX(50px);
 			}
 		}
 
-		// &__box {
-		// 	@include heroImages('https://pixabay.com/pl/users/torulus-7457760/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3144759');
-		// }
-	}
-}
+		&__box{
+			grid-column: 2/4;
+		}
 
-@media (min-width: 1200px) {
+		&__logo{
+			width: 150px;
+		}
+
+		&__bg {
+			@include heroImages('../img/sword-1920.jpg');
+		}
+	}
+	
+	.contact{
+		&__title{
+			grid-column: 3/4;
+			
+			&::before {
+				transform: translateX(-50px);
+			}
+		}
+	}
 }
