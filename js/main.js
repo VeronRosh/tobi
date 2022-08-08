@@ -1,6 +1,6 @@
-particlesJS.load('currentCard', './js/assets/particles.json');
-particlesJS.load('previousCard', './js/assets/particles.json');
-particlesJS.load('nextCard', './js/assets/particles.json');
+particlesJS.load('currentCard', 'js/assets/particles.json');
+particlesJS.load('previousCard', 'js/assets/particles.json');
+particlesJS.load('nextCard', 'js/assets/particles.json');
 
 const body = document.querySelector('body');
 

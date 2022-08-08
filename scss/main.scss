@@ -26,6 +26,7 @@ body {
 }
 
 .wrapper {
+	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
@@ -198,7 +199,7 @@ body {
 		position: fixed;
 		top: 0;
 		width: 100%;
-		z-index: 10;
+		z-index: 1000;
 		transition: background-color 0.3s;
 
 		&--active {
@@ -240,7 +241,7 @@ body {
 	display: inline-block;
 	position: relative;
 	padding: 1em 1.5em;
-	margin: 0em 1em;
+	// margin: 0em 1em;
 	text-transform: uppercase;
 	font-size: 1.8rem;
 	font-weight: 300;
@@ -266,16 +267,19 @@ body {
 }
 
 .conteiner {
+	// position: relative;
+	// position: absolute;
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	grid-template-columns: repeat(3, 1fr);
 	max-width: 1200px;
+	padding: 0 2em;
 }
 
 .community__title, .offer__title, .shopping__title, .contact__title{
 		height: 70px;
 		grid-column: 1/4;
-		grid-row: 2/3;
+		grid-row: 3/4;
 }
 
 .offer {
@@ -285,8 +289,7 @@ body {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 		gap: 2em 2.5em;
-		padding: 1em 2em;
-		margin-top: 2em;
+		padding: 0 2em;
 	}
 
 	&__card {
@@ -387,12 +390,13 @@ body {
 	&__cards {
 		position: relative;
 		display: grid;
+		gap: 5em;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(3, 1fr);
 		width: 100%;
 		height: 100%;
-		padding: 1em 2em;
-		margin-top: -3em;
+		padding: 0 2em;
+		// margin-top: -1em;
 	}
 
 	&__card {
@@ -403,7 +407,7 @@ body {
 		background-position: center;
 		background-size: cover;
 		height: 330px;
-		margin-top: 5em;
+		// margin-top: 5em;
 		padding: 1em 2em;
 		overflow: hidden;
 
@@ -433,6 +437,7 @@ body {
 		}
 
 		&-degree {
+			display: none;
 			position: absolute;
 			width: 50px;
 			height: 50px;
@@ -486,14 +491,17 @@ body {
 			right: 1em;
 			top: 1em;
 			padding: 0.5em 1em;
-			font-size: 1.5rem;
-			background-color: tomato;
+			font-size: 2rem;
 			color: #fff;
+			border: none;
+			background: none;
+			cursor: pointer;
+
 		}
 
 		&-btn {
-			bottom: 5%;
-			padding: 1em 2em;
+			bottom: 7%;
+			padding: 1em 3em;
 			font-weight: 600;
 			font-family: 'Montserrat', sans-serif;
 			text-transform: uppercase;
@@ -515,6 +523,7 @@ body {
 				letter-spacing: 2px;
 			}
 		}
+
 		//back vue of card shopping
 		&-back {
 			visibility: hidden;
@@ -550,7 +559,7 @@ body {
 					top: 50%;
 					transform: translateY(-50%);
 					font-size: 2.7rem;
-					color: rgba(255, 255, 255, 0.144);
+					color: rgba(255, 255, 255, 0.233);
 					font-weight: 900;
 					margin: 0 auto;
 					width: 90%;
@@ -566,7 +575,7 @@ body {
 				}
 			}
 
-			&__textBox {
+			&-textBox {
 				position: absolute;
 				display: flex;
 				align-items: center;
@@ -623,6 +632,7 @@ body {
 	&__bg {
 		height: 600px;
 		@include heroImages('../img/sword-640.jpg');
+
 	}
 
 	&__wrapper{
@@ -653,7 +663,6 @@ body {
 	&__logo{
 		@include middleElement;
 		width: 100px;
-		// border: 2px solid #fff;
 		border-radius: 50%;
 		padding: 1em;
 		background-color: rgba(4, 29, 49, 0.726);
@@ -669,16 +678,12 @@ body {
 		font-family: 'Montserrat', sans-serif; 
 		text-align: center;
 		text-decoration: none;
-		background-color: rgba(31, 106, 177, 0.562);
+		background-color: rgba(16, 84, 148, 0.575);
 		color: #fff;
 		border-radius: 10px;
-		transition: transform .3s;
+		transition: all .3s;
 		overflow: hidden;
 		cursor: pointer;
-		
-		&:hover{
-			transform: scale(1.05);
-		}
 
 		&::before{
 			content: '';
@@ -691,7 +696,9 @@ body {
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
 			background-color: rgba(9, 35, 59, 0.562);
+			transition: background-color .3s;
 		}
+
 		
 		p, &--letter{
 			z-index: 10;
@@ -704,55 +711,70 @@ body {
 			line-height: 1.4em;
 		}
 
+		
 		&--border:nth-child(3){
-			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 2px;
-			background-color: rgb(7, 104, 168);
 			animation: borderSnake1 1.5s linear infinite;
 		}
 		
 		&--border:nth-child(4){
-			position: absolute;
 			top: 0;
 			right: 0;
 			width: 2px;
 			height: 100%;
-			background-color: rgb(7, 104, 168);
 			animation: borderSnake2 1.5s linear infinite;
 			animation-delay: .625s;
 		}
 		
 		&--border:nth-child(5){
-			position: absolute;
 			bottom: 0;
 			right: 0;
 			width: 100%;
 			height: 2px;
-			background-color: rgb(7, 104, 168);
 			animation: borderSnake3 1.5s linear infinite;
 			animation-delay: .625s;
 		}
 		
 		&--border:nth-child(6){
-			position: absolute;
 			top: 0;
 			left: 0;
 			width: 2px;
 			height: 100%;
-			background-color: rgb(7, 104, 168);
 			animation: borderSnake4 1.5s linear infinite;
 			animation-delay: .625s;
 		}
+		
+		&--border:nth-child(3),&--border:nth-child(4),&--border:nth-child(5),&--border:nth-child(6){
+			position: absolute;
+			background-color: rgb(7, 104, 168);
+			opacity: 0;
+			transition: opacity .3s;
+		}
+
+		&:hover &--border:nth-child(3), &:hover &--border:nth-child(5),&:hover &--border:nth-child(4), &:hover &--border:nth-child(6){
+			opacity: 1;
+		}
+
+		// &:hover &--border:nth-child(3), &:hover &--border:nth-child(5){
+		// 	width: 100%;
+		// 	height: 2px;
+		// 	opacity: 1;
+		// }
+
+		// &:hover &--border:nth-child(4), &:hover &--border:nth-child(6){
+		// 	height: 100%;
+		// 	width: 2px;
+		// 	opacity: 1;
+		// }
+		
 	}
 
 	&__list{
 		grid-column: 2/8;
 		grid-row: 7/8;
-		// padding: 1em 2em;
-		// margin-right: 2em;
 		margin-left: 1em;
 		font-size: 1.6rem;
 		line-height: 1.8em;
@@ -760,10 +782,9 @@ body {
 }
 
 
-//buttons
+//buttons closing
 
-.modal__cross,
-.shopping__card-cross {
+.modal__cross {
 	display: flex;
 	justify-content: center;
 	align-items: center;
